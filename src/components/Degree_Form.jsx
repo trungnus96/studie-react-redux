@@ -124,26 +124,12 @@ class Degree_Form extends Component {
             Clear Values
           </button>
           {/* MODAL - STARTS */}
-          {/* <Modal bsSize="small" show={this.state.showModal} onHide={this.close.bind(this)}>
-            <Modal.Header closeButton>
-              <Modal.Title>
-                {isAddDegree ? <span>Add Degree</span> : <span>Update Degree</span>}
-              </Modal.Title>
-            </Modal.Header>
-            <Modal.Body>
-              {this.props.isFetching && this.props.message}
-              {!this.props.isFetching && this.props.message}
-            </Modal.Body>
-            <Modal.Footer>
-              <button className="btn btn-primary" onClick={this.close.bind(this)}>Close</button>
-            </Modal.Footer>
-          </Modal> */}
+          <Modal show={this.state.showModal}
+            onHide={this.close.bind(this)}
+            title={isAddDegree ? 'Add Degree' : 'Update Degree'}
+            message={this.props.message}/>
           {/* MODAL - ENDS */}
         </form>
-        <Modal show={this.state.showModal}
-          onHide={this.close.bind(this)}
-          title={isAddDegree ? 'Add Degree' : 'Update Degree'}
-          message={this.props.message}/>
         <div className="toggle-default pull-right" onClick={this.props.toggleDefault.bind(this)}>Close</div>
       </div>
     );

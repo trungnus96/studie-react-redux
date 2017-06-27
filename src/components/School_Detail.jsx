@@ -149,76 +149,7 @@ class School_Detail extends Component {
               </div>
             );
           })}
-          {/* DELETION MODAL - STARTS */}
-          {/* <Modal bsSize="small" show={this.state.showModal_delete} onHide={this.close_deletion_modal.bind(this)}>
-            <Modal.Header closeButton>
-              <Modal.Title>
-                {this.state.on_school && <div>Delete School</div>}
-                {this.state.on_degree && <div>Delete Degree</div>}
-              </Modal.Title>
-            </Modal.Header>
-            <Modal.Body>
-              {this.state.on_school && <div>
-                {this.props.messageFromMark}
-                <br/>
-                {this.props.messageFromDegree}
-                <br/>
-                {this.props.messageFromSchool}
-              </div>}
-
-              {this.state.on_degree && <div>
-                {this.props.messageFromMark}
-                <br/>
-                {this.props.messageFromDegree}
-              </div>}
-            </Modal.Body>
-            <Modal.Footer>
-              <button className="btn btn-primary" onClick={this.close_deletion_modal.bind(this)}>Close</button>
-            </Modal.Footer>
-          </Modal> */}
-          {/* DELETION MODAL - ENDS */}
-          {/* CONFIRMATION MODAL - STARTS */}
-          {/* <Modal bsSize="small" show={this.state.showModal_cofirm} onHide={this.close_confirm_modal.bind(this)}>
-            <Modal.Header closeButton>
-              <Modal.Title>Confirmation</Modal.Title>
-            </Modal.Header>
-            <Modal.Body>
-              <b>Do you wish to delete this
-                {this.state.on_school && <span> school</span>}
-                {this.state.on_degree && <span> degree</span>}?</b>
-              <br/><br/>
-
-              {this.state.on_school && <div>
-                {this.state.school.school_name}
-                <br/>
-                City: {this.state.school.city}
-                <br/>
-                State: {this.state.school.state}
-                <br/>
-                Country: {this.state.school.country}
-              </div>}
-
-              {this.state.on_degree && <div>
-                {this.state.degree.degree_name}
-                <br/>
-                Duration: {this.state.degree.duration} years
-              </div>}
-            </Modal.Body>
-            <Modal.Footer>
-              <button className="btn btn-info" onClick={this.close_confirm_modal.bind(this)}>Close</button>
-              <button
-                className="btn btn-danger"
-                onClick={() => {
-                  if(this.state.on_school){
-                    this.deleteSchool();
-                  }
-                  if(this.state.on_degree){
-                    this.deleteDegree();
-                  }
-                }}>Delete</button>
-            </Modal.Footer>
-          </Modal> */}
-          {/* CONFIRMATION MODAL - ENDS */}
+          {/* MODAL - STARTS */}
           <Modal show={this.state.showModal}
             onHide={this.close.bind(this)}
             title={
@@ -249,6 +180,7 @@ class School_Detail extends Component {
               ||
               (this.state.on_degree && this.deleteDegree.bind(this))
             }/>
+            {/* MODAL - ENDS */}
         </div>
       </div>
     );

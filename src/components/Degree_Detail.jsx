@@ -126,50 +126,14 @@ class Degree_Detail extends Component {
           <div className="empty text-center">
             You have no Schools. Please add one<i className="fa fa-smile-o"/>
           </div>}
-          {/* DELETE-MARK MODAL - STARTS */}
-          {/* <Modal bsSize="small" show={this.state.showModal_delete} onHide={this.close_deletion_modal.bind(this)}>
-            <Modal.Header closeButton>
-              <Modal.Title>Delete Mark</Modal.Title>
-            </Modal.Header>
-            <Modal.Body>
-              {this.props.message}
-            </Modal.Body>
-            <Modal.Footer>
-              <button className="btn btn-primary" onClick={this.close_deletion_modal.bind(this)}>Close</button>
-            </Modal.Footer>
-          </Modal> */}
-          {/* DELETE-MARK MODAL - ENDS */}
-          {/* CONFIRMATION MODAL - STARTS */}
-          {/* <Modal bsSize="small" show={this.state.showModal_cofirm} onHide={this.close_confirm_modal.bind(this)}>
-            <Modal.Header closeButton>
-              <Modal.Title>Confirmation</Modal.Title>
-            </Modal.Header>
-            <Modal.Body>
-              <b>Do you wish to delete this mark?</b>
-              <br/><br/>
-              {this.state.mark.subject_name}
-              <br/>
-              Subject Code: {this.state.mark.subject_code}
-              <br/>
-              Mark: {this.state.mark.mark}
-              <br/>
-              Semester: {this.state.mark.semester}
-              <br/>
-              Year Level: {this.state.mark.year_level}
-
-            </Modal.Body>
-            <Modal.Footer>
-              <button className="btn btn-info" onClick={this.close_confirm_modal.bind(this)}>Close</button>
-              <button className="btn btn-danger" onClick={this.deleteMark.bind(this)}>Delete</button>
-            </Modal.Footer>
-          </Modal> */}
+          {/* MODAL - STARTS */}
           <Modal show={this.state.showModal}
             onHide={this.close.bind(this)}
             title={(this.state.on_confirm && 'Confirmation') || (this.state.on_delete && 'Delete Mark')}
             message={(this.state.on_confirm && this.state.message) || (this.state.on_delete && this.props.message)}
             additional_button_name={this.state.on_confirm && 'Delete'}
             action_on_additional_button={this.deleteMark.bind(this)}/>
-          {/* CONFIRMATION MODAL - ENDS */}
+          {/* MODAL - ENDS */}
       </div>
     );
   }
