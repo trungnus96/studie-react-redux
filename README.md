@@ -6,12 +6,12 @@ This is another version of my personal project - **Studie** - which is built wit
 
 ### What are differences from "Angular2" Studie?
 * Single page Front-end application.
-* New UI - hooray!
+* New UI - hooray! :clap:
 * Faster and better user experiences.
 * Remove all overlapping modals.
 * Remove all unnecessary page reload.
 * More compact written codes.
-* ** Not contain admin features :( **
+* **Not contain admin features** :tired_face:
 
 ### Install
 ```
