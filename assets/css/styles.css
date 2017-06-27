@@ -2,7 +2,7 @@
   border: 1px solid black;
 }*/
 
-.bio img {
+/*.bio img {
   background-size: cover;
   background-position: center;
   width: 100%;
@@ -14,9 +14,9 @@
   vertical-align:middle;
   margin:auto;
   margin-top: -70px;
-}
+}*/
 
-.bio-avatar {
+/*.bio-avatar {
   border: 1px solid lightgrey;
   margin-bottom: 20px;
   padding-bottom: 20px;
@@ -29,15 +29,15 @@
 
 .glyphicon, i{
   margin: 10px;
-}
+}*/
 
-.academic_pannel, .status_bar, .studie_page, .update_bio_page {
+/*.academic_pannel, .status_bar, .studie_page, .update_bio_page {
   padding: 20px;
   border: 1px solid lightgrey;
   margin: 10px 0 10px 0;
-}
+}*/
 
-.status_bar p {
+/*.status_bar p {
   margin: 0;
 }
 
@@ -53,10 +53,10 @@
 .update-profile-btn{
   cursor: pointer;
   font-size: 14px;
-}
+}*/
 
 
-.update-profile-btn:hover{
+/*.update-profile-btn:hover{
   color: black;
 }
 
@@ -69,7 +69,7 @@ small.update-profile-btn{
   width: 100px;
   height: 40px;
   margin: 5px;
-}
+}*/
 
 /*School Detail - STARTS */
 .degrees-list {

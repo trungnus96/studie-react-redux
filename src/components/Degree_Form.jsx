@@ -89,7 +89,7 @@ class Degree_Form extends Component {
     const isAddDegree = (Object.getOwnPropertyNames(this.props.initialValues).length === 1);
     const { handleSubmit, pristine, submitting, reset } = this.props;
     return (
-      <div className="update_bio_page col-md-12">
+      <div className="degree-form col-md-12">
         <div className="toggle-default pull-right" onClick={this.props.toggleDefault.bind(this)}>Close</div>
         <h4>
           {isAddDegree ? <span>Add Degree</span> : <span>Update Degree</span>}

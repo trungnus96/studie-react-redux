@@ -52,7 +52,7 @@ class Studie_Page extends Component {
           <div>
             {/* When there is no school for this user */}
             {!this.props.schools.isFetching && this.props.schools.schools.length == 0 &&
-              <div className="empty text-center">
+              <div className="empty">
                 You have no Schools. Please add one<i className="fa fa-smile-o"/>
               </div>}
 

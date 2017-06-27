@@ -58,7 +58,7 @@ class School_Form extends Component {
     const isAddSchool = (Object.getOwnPropertyNames(this.props.initialValues).length === 0);
     const { handleSubmit, pristine, submitting, reset } = this.props;
     return (
-      <div className="update_bio_page col-md-12">
+      <div className="school-form col-md-12">
         <div className="toggle-default pull-right" onClick={this.props.toggleDefault.bind(this)}>Close</div>
         <h4>
           {isAddSchool ? <span>Add School</span> : <span>Update School</span>}

@@ -81,7 +81,7 @@ class School_Detail extends Component {
             {this.props.school.school_name}
             <span className="pull-right">
               <span
-                className="glyphicon glyphicon-plus school-button"
+                className="glyphicon glyphicon-plus detail-button"
                 data-tip
                 data-for="addDegree"
                 onClick={() => {this.props.toggleDegreeAdd(this.props.school._id); this.props.toggleDegreeForm()}}
@@ -90,7 +90,7 @@ class School_Detail extends Component {
                 <span>Add a Degree</span>
               </ReactTooltip>
               <span
-                className="glyphicon glyphicon-edit school-button"
+                className="glyphicon glyphicon-edit detail-button"
                 data-tip
                 data-for="editSchool"
                 onClick={() => this.updateSchool(this.props.school)}/>
@@ -98,7 +98,7 @@ class School_Detail extends Component {
                 <span>Edit this School</span>
               </ReactTooltip>
               <span
-                className="glyphicon glyphicon-trash school-button"
+                className="glyphicon glyphicon-trash detail-button"
                 data-tip
                 data-for="removeSchool"
                 onClick={() => this.commit_delete_school(this.props.school)}/>
@@ -113,7 +113,7 @@ class School_Detail extends Component {
         <div className="panel-body">
           {/* When there is no degree for this university */}
           {this.props.degrees.length == 0 &&
-            <div className="empty text-center">
+            <div className="empty">
               You have no Degrees. Please add one<i className="fa fa-smile-o"/>
             </div>}
 

@@ -4,6 +4,7 @@ import NavBar from './NavBar.jsx';
 import Login from './Login.jsx';
 import Home from './Home.jsx';
 import {requireAuthentication} from './AuthenticatedComponent.jsx';
+require('./style.scss');
 
 export default class App extends React.Component {
   render() {

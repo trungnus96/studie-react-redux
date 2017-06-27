@@ -4,21 +4,21 @@ import { bindActionCreators } from 'redux';
 
 import { toggleUpdateBio, toggleUpdatePassword } from '../actions/Toggle.jsx';
 
-class User_Bio extends Component {
+class User_Profile extends Component {
 
   renderBio(user){
     return (
       <div>
-        <div className="bio-avatar">
-          <img src="https://static.pexels.com/photos/40120/pexels-photo-40120.jpeg" />
-          <img className="avatar" src="https://www.encartele.net/assets/images/customer-contact.png" />
+        <div className="profile-avatar">
+          <img src="https://images.pexels.com/photos/261577/pexels-photo-261577.jpeg?w=940&h=650&auto=compress&cs=tinysrgb" />
+          <img className="avatar" src="../../assets/img/user.png" />
           <div className="info text-center">
             <h3>{user.name}</h3>
             <h4>{user.username}</h4>
             <small className="update-profile-btn form-text text-muted" onClick={this.props.toggleUpdatePassword.bind(this)}>Update Password</small>
           </div>
         </div>
-        <div className="bio-info">
+        <div className="profile-info">
           <h3>About
             <small
               className="update-profile-btn form-text text-muted pull-right"
@@ -47,7 +47,7 @@ class User_Bio extends Component {
         type: 'Fetching...'
       }
       return (
-        <div className="bio col-md-3">
+        <div className="col-md-3">
           {this.renderBio(user)}
         </div>
       );
@@ -61,7 +61,7 @@ class User_Bio extends Component {
       type: this.props.user.type.toUpperCase()
     }
     return (
-      <div className="bio col-md-3">
+      <div className="col-md-3">
         {this.renderBio(user)}
       </div>
     );
@@ -74,4 +74,4 @@ function mapDispatchToProps(dispatch) {
   }, dispatch);
 }
 
-export default connect(null, mapDispatchToProps)(User_Bio);
+export default connect(null, mapDispatchToProps)(User_Profile);

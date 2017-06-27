@@ -25,16 +25,22 @@ class Main_Page extends Component {
 
   render() {
     return (
-      <div className="main_page col-md-6">
+      <div className="main-page col-md-6">
         <Spinner name="ball-clip-rotate-multiple" />
         {/* <Status_Bar stuff={this.props}/> */}
         <Academic_Pannel
+          type='Schools'
+          class='school'
           academic_data={this.props.schools.schools}
           isFetching={this.props.schools.isFetching}/>
         <Academic_Pannel
+          type='Degrees'
+          class='degree'
           academic_data={this.props.degrees.degrees}
           isFetching={this.props.schools.isFetching}/>
         <Academic_Pannel
+          type='Marks'
+          class='mark'
           academic_data={this.props.marks.marks}
           isFetching={this.props.schools.isFetching}/>
         {this.props.toggle.isStudie && <Studie_Page />}

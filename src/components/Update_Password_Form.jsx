@@ -51,7 +51,7 @@ class Update_Password_Form extends Component {
   render() {
     const { handleSubmit, pristine, submitting, reset } = this.props;
     return (
-      <div className="update_bio_page col-md-12">
+      <div className="update_password_page col-md-12">
         <div className="toggle-default pull-right" onClick={this.props.toggleDefault.bind(this)}>Close</div>
         <h4>Update password</h4>
         <form onSubmit={handleSubmit(this.onSubmit.bind(this))}>

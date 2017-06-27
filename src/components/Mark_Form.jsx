@@ -95,7 +95,7 @@ class Mark_Form extends Component {
     const isAddMark = (Object.getOwnPropertyNames(this.props.initialValues).length === 1);
     const { handleSubmit, pristine, submitting, reset } = this.props;
     return (
-      <div className="update_bio_page col-md-12">
+      <div className="mark-form col-md-12">
         <div className="toggle-default pull-right" onClick={this.props.toggleDegreeDetail.bind(this)}>Close</div>
         <h4>
           {isAddMark ? <span>Add Mark</span> : <span>Update Mark</span>}

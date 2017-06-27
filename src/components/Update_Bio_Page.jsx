@@ -52,7 +52,7 @@ class Update_Bio_Page extends Component {
   render() {
     const { handleSubmit, pristine, submitting, reset, isFetching } = this.props;
     return (
-      <div className="update_bio_page col-md-12">
+      <div className="update_profile_page col-md-12">
         <div className="toggle-default pull-right" onClick={this.props.toggleDefault.bind(this)}>Close</div>
         <h4>Update profile</h4>
         <form onSubmit={handleSubmit(this.onSubmit.bind(this))}>

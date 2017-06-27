@@ -84,20 +84,24 @@ class Degree_Detail extends Component {
       return (mark.degree_id === this.props.academic_data.degree._id && mark.school_id === this.props.academic_data.school._id);
     });
     return (
-      <div className="update_bio_page hihi">
+      <div className="degree-detail">
         <div className="toggle-default text-right" onClick={this.props.toggleSchoolDetail.bind(this)}>Close</div>
-        <div className="col-md-5">
-          {this.props.academic_data.school.school_name}
-          <br />
-          <small>{this.props.academic_data.school.city}, {this.props.academic_data.school.state}, {this.props.academic_data.school.country}</small>
+        <div className="school-panel">
+          <div className="info">
+            <b>{this.props.academic_data.school.school_name}</b>
+            <br />
+            <small>{this.props.academic_data.school.city}, {this.props.academic_data.school.state}, {this.props.academic_data.school.country}</small>
+          </div>
         </div>
-        <div className="col-md-7">
-          {this.props.academic_data.degree.degree_name}
-          <br />
-          <small>{this.props.academic_data.degree.duration} years</small>
-        </div>
+        <div className="degree-panel">
+          <div className="info">
+            <b>{this.props.academic_data.degree.degree_name}</b>
+            <br />
+            <small>{this.props.academic_data.degree.duration} years</small>
+          </div>
+          </div>
         <div
-          className="glyphicon glyphicon-plus school-button pull-right"
+          className="glyphicon glyphicon-plus detail-button pull-right"
           data-tip
           data-for="addMark"
           onClick={() => { this.props.toggleMarkAdd(this.props.academic_data.degree._id); this.props.toggleMarkForm()}} />

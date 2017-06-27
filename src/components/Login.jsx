@@ -6,6 +6,7 @@ import { MyModal as Modal } from './MyModal.jsx';
 import {loginUser} from '../actions/index.jsx';
 import {validateToken} from '../actions/index.jsx';
 
+
 class Login extends Component {
 
   constructor(props) {
@@ -94,6 +95,9 @@ class Login extends Component {
             </span>}
           </fieldset>
         </form>
+        <div className="hello-form">
+          <p>hi</p>
+        </div>
         <Modal show={this.state.showModal}
           onHide={this.close.bind(this)}
           title='Warning!'
