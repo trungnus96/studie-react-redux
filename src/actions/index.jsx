@@ -3,7 +3,10 @@ import jwtDecode from 'jwt-decode';
 export const LOGIN_REQUEST = 'LOGIN_REQUEST';
 export const LOGIN_SUCCESS = 'LOGIN_SUCCESS';
 export const LOGIN_FAILURE = 'LOGIN_FAILURE';
-export const LOGOUT = 'LOGOUT'
+export const LOGOUT = 'LOGOUT';
+
+const url = 'https://ancient-ocean-55048.herokuapp.com';
+// const url = 'http://localhost:8080';
 
 function requestLogin() {
   return {
@@ -50,7 +53,7 @@ export function loginUser(creds) {
     // We dispatch requestLogin to kickoff the call to the API
     dispatch(requestLogin())
 
-    return axios.post('http://localhost:8080/users/authenticate', creds)
+    return axios.post(`${url}/users/authenticate`, creds)
       .then(response => {
         if(!response.data.success) {
           dispatch(loginError(response.data.msg));
@@ -73,7 +76,7 @@ export function validateToken(token) {
   }
 
   return dispatch => {
-    return axios.get('http://localhost:8080/users/validateToken', config)
+    return axios.get(`${url}/users/validateToken`, config)
       .then(response => {
         dispatch(receiveLogin(token));
       })

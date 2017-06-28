@@ -34,3 +34,10 @@ npm start
 ### Authors
 
 **Trung Nguyen**
+
+#### Credits
+* [FontAwesome](fontawesome.io) - Icon Library
+* [FlatIcon](http://www.flaticon.com/) - Flat Icon Resource
+* [FlatColorPicker](http://www.flatuicolorpicker.com/) - Flat Color Resource
+* [React-Redux Course](https://www.udemy.com/react-redux/) - What I'd learned before I started this project
+* [Redux Scratch Course](https://egghead.io/courses/getting-started-with-redux) - Another React-Redux resource

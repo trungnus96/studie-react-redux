@@ -76,28 +76,32 @@ class Login extends Component {
 
   render() {
     return (
-      <div style={{ textAlign: 'center' }}>
-        <form className="form-horizontal" onSubmit={this.onSubmit.bind(this)}>
-          <fieldset>
-            <div className="form-group">
-              <label htmlFor="username" className="col-md-4 col-sm-3 col-xs-3 control-label">Username</label>
-              {this.renderInputField(this.state.username, this.onChange.bind(this), 'username', 'text')}
-            </div>
-            <div className="form-group">
-              <label htmlFor="password" className="col-md-4 col-sm-3 col-xs-3 control-label">Password</label>
-              {this.renderInputField(this.state.password, this.onChange.bind(this), 'password', 'password')}
-            </div>
-            <div className="form-group">
-              <button className="btn btn-primary" type="submit" disabled={this.props.auth.isFetching}>Login</button>
-            </div>
-            {this.props.auth.isFetching && <span>
-              <i className="fa fa-spinner fa-pulse fa-2x fa-fw"/>
-            </span>}
-          </fieldset>
-        </form>
-        <div className="hello-form">
-          <p>hi</p>
+      <div className="login-field container-fluid" style={{ textAlign: 'center' }}>
+        <h1><strong><i className="fa fa-graduation-cap" aria-hidden="true"></i> Studie </strong> Management Console</h1>
+        <h4><small>by </small> Trung Nguyen</h4>
+        <div className="row">
+          <div className="col-md-6 col-center-block">
+            <form className="form-horizontal" onSubmit={this.onSubmit.bind(this)}>
+              <fieldset>
+                <div className="form-group">
+                  <label htmlFor="username" className="col-md-4 col-sm-3 col-xs-3 control-label">Username</label>
+                  {this.renderInputField(this.state.username, this.onChange.bind(this), 'username', 'text')}
+                </div>
+                <div className="form-group">
+                  <label htmlFor="password" className="col-md-4 col-sm-3 col-xs-3 control-label">Password</label>
+                  {this.renderInputField(this.state.password, this.onChange.bind(this), 'password', 'password')}
+                </div>
+                <div className="form-group">
+                  <button className="btn btn-primary" type="submit" disabled={this.props.auth.isFetching}>Login</button>
+                </div>
+                {this.props.auth.isFetching && <span>
+                  <i className="fa fa-spinner fa-pulse fa-2x fa-fw"/>
+                </span>}
+              </fieldset>
+            </form>
+          </div>
         </div>
+
         <Modal show={this.state.showModal}
           onHide={this.close.bind(this)}
           title='Warning!'

@@ -13,6 +13,9 @@ export const UPDATE_PASSWORD_REQUEST = 'UPDATE_PASSWORD_REQUEST';
 export const UPDATE_PASSWORD_SUCCESS = 'UPDATE_PASSWORD_SUCCESS';
 export const UPDATE_PASSWORD_FAILURE = 'UPDATE_PASSWORD_FAILURE';
 
+const url = 'https://ancient-ocean-55048.herokuapp.com';
+// const url = 'http://localhost:8080';
+
 // GET DATA FROM API - STARTS
 function requestUserData() {
   return {
@@ -49,7 +52,7 @@ export function getUser() {
   return dispatch => {
     // We dispatch requestLogin to kickoff the call to the API
     dispatch(requestUserData())
-    return axios.get(`http://localhost:8080/users/user/${username}`, config)
+    return axios.get(`${url}/users/user/${username}`, config)
       .then(response => {
         if(!response.data.success) {
           dispatch(requestDataError(response.data.msg));
@@ -99,7 +102,7 @@ export function updateProfile(data) {
   return dispatch => {
     // We dispatch requestLogin to kickoff the call to the API
     dispatch(requestUpdateUser())
-    return axios.put(`http://localhost:8080/users/updateProfile/${id}`, data, config)
+    return axios.put(`${url}/users/updateProfile/${id}`, data, config)
       .then(response => {
         if(!response.data.success) {
           dispatch(updateUserError(response.data.msg));
@@ -153,7 +156,7 @@ export function updatePassword(new_data) {
   return dispatch => {
     // We dispatch requestLogin to kickoff the call to the API
     dispatch(requestUpdatePassword())
-    return axios.put(`http://localhost:8080/users/updatePassword/${id}`, data, config)
+    return axios.put(`${url}/users/updatePassword/${id}`, data, config)
       .then(response => {
 
         if(!response.data.success) {

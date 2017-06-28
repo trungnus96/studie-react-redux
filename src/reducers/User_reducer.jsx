@@ -2,7 +2,7 @@ import { FETCHING_USER_REQUEST, FETCHING_USER_SUCCESS, FETCHING_USER_FAILURE,
 UPDATE_USER_REQUEST, UPDATE_USER_SUCCESS, UPDATE_USER_FAILURE,
 UPDATE_PASSWORD_REQUEST, UPDATE_PASSWORD_SUCCESS, UPDATE_PASSWORD_FAILURE } from '../actions/User.jsx';
 
-export default function(state = {}, action) {
+export default function(state = { isFetching: true }, action) {
 
   switch(action.type) {
     case FETCHING_USER_REQUEST:

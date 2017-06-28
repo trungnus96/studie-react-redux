@@ -55,6 +55,9 @@ export const DELETE_MARK_BY_SCHOOL_ID_REQUEST = 'DELETE_MARK_BY_SCHOOL_ID_REQUES
 export const DELETE_MARK_SUCCESS = 'DELETE_MARK_SUCCESS';
 export const DELETE_MARK_FAILURE = 'DELETE_MARK_FAILURE';
 
+const url = 'https://ancient-ocean-55048.herokuapp.com';
+// const url = 'http://localhost:8080';
+
 // GET SCHOOL DATA FROM API - STARTS
 function requestSchoolData() {
   return {
@@ -91,7 +94,7 @@ export function getSchools() {
   return dispatch => {
     // We dispatch requestLogin to kickoff the call to the API
     dispatch(requestSchoolData())
-    return axios.get(`http://localhost:8080/school/schools?username=${username}`, config)
+    return axios.get(`${url}/school/schools?username=${username}`, config)
       .then(response => {
         if(!response.data.success) {
           dispatch(requestSchoolDataError(response.data.msg));
@@ -141,7 +144,7 @@ export function getDegrees() {
   return dispatch => {
     // We dispatch requestLogin to kickoff the call to the API
     dispatch(requestDegreeData())
-    return axios.get(`http://localhost:8080/degree/degrees?username=${username}`, config)
+    return axios.get(`${url}/degree/degrees?username=${username}`, config)
       .then(response => {
         if(!response.data.success) {
           dispatch(requestDegreeDataError(response.data.msg));
@@ -192,7 +195,7 @@ export function getMarks() {
     // We dispatch requestLogin to kickoff the call to the API
     dispatch(requestMarkData())
 
-    return axios.get(`http://localhost:8080/mark/marks?username=${username}`, config)
+    return axios.get(`${url}/mark/marks?username=${username}`, config)
       .then(response => {
         if(!response.data.success) {
           dispatch(requestMarkDataError(response.data.msg));
@@ -243,7 +246,7 @@ export function addSchool(school) {
   return dispatch => {
     // We dispatch requestLogin to kickoff the call to the API
     dispatch(requestAddSchool())
-    return axios.post(`http://localhost:8080/school/add`, data, config)
+    return axios.post(`${url}/school/add`, data, config)
       .then(response => {
         if(!response.data.success) {
           dispatch(addSchoolError(response.data.msg));
@@ -294,7 +297,7 @@ export function updateSchool(id, school) {
   return dispatch => {
     // We dispatch requestLogin to kickoff the call to the API
     dispatch(requestUpdateSchool())
-    return axios.put(`http://localhost:8080/school/updateSchool/${id}`, school, config)
+    return axios.put(`${url}/school/updateSchool/${id}`, school, config)
       .then(response => {
         if(!response.data.success) {
           dispatch(updateSchoolError(response.data.msg));
@@ -353,7 +356,7 @@ export function deleteSchoolById(id) {
   return dispatch => {
     // We dispatch requestLogin to kickoff the call to the API
     dispatch(requestDeleteSchoolById())
-    return axios.delete(`http://localhost:8080/school/deleteSchool/${id}`, config)
+    return axios.delete(`${url}/school/deleteSchool/${id}`, config)
       .then(response => {
         if(!response.data.success) {
           dispatch(deleteSchoolError(response.data.msg));
@@ -406,7 +409,7 @@ export function addDegree(degree) {
   return dispatch => {
     // We dispatch requestLogin to kickoff the call to the API
     dispatch(requestAddDegree())
-    return axios.post(`http://localhost:8080/degree/add`, data, config)
+    return axios.post(`${url}/degree/add`, data, config)
       .then(response => {
         if(!response.data.success) {
           dispatch(addDegreeError(response.data.msg));
@@ -457,7 +460,7 @@ export function updateDegree(id, degree) {
   return dispatch => {
     // We dispatch requestLogin to kickoff the call to the API
     dispatch(requestUpdateDegree())
-    return axios.put(`http://localhost:8080/degree/updateDegree/${id}`, degree, config)
+    return axios.put(`${url}/degree/updateDegree/${id}`, degree, config)
       .then(response => {
         if(!response.data.success) {
           dispatch(updateDegreeError(response.data.msg));
@@ -516,7 +519,7 @@ export function deleteDegreeById(id) {
   return dispatch => {
     // We dispatch requestLogin to kickoff the call to the API
     dispatch(requestDeleteDegreeById())
-    return axios.delete(`http://localhost:8080/degree/deleteDegree/${id}`, config)
+    return axios.delete(`${url}/degree/deleteDegree/${id}`, config)
       .then(response => {
         if(!response.data.success) {
           dispatch(deleteDegreeError(response.data.msg));
@@ -544,7 +547,7 @@ export function deleteDegreeBySchoolId(school_id) {
   return dispatch => {
     // We dispatch requestLogin to kickoff the call to the API
     dispatch(requestDeleteDegreeBySchoolId())
-    return axios.delete(`http://localhost:8080/degree/deleteDegree?school_id=${school_id}`, config)
+    return axios.delete(`${url}/degree/deleteDegree?school_id=${school_id}`, config)
       .then(response => {
         if(!response.data.success) {
           dispatch(deleteDegreeError(response.data.msg));
@@ -597,7 +600,7 @@ export function addMark(mark) {
   return dispatch => {
     // We dispatch requestLogin to kickoff the call to the API
     dispatch(requestAddMark())
-    return axios.post(`http://localhost:8080/mark/add`, data, config)
+    return axios.post(`${url}/mark/add`, data, config)
       .then(response => {
         if(!response.data.success) {
           dispatch(addMarkError(response.data.msg));
@@ -648,7 +651,7 @@ export function updateMark(id, mark) {
   return dispatch => {
     // We dispatch requestLogin to kickoff the call to the API
     dispatch(requestUpdateMark())
-    return axios.put(`http://localhost:8080/mark/updateMark/${id}`, mark, config)
+    return axios.put(`${url}/mark/updateMark/${id}`, mark, config)
       .then(response => {
         if(!response.data.success) {
           dispatch(updateMarkError(response.data.msg));
@@ -714,7 +717,7 @@ export function deleteMarkById(id) {
   return dispatch => {
     // We dispatch requestLogin to kickoff the call to the API
     dispatch(requestDeleteMarkById())
-    return axios.delete(`http://localhost:8080/mark/deleteMark/${id}`, config)
+    return axios.delete(`${url}/mark/deleteMark/${id}`, config)
       .then(response => {
         if(!response.data.success) {
           dispatch(deleteMarkError(response.data.msg));
@@ -742,7 +745,7 @@ export function deleteMarkByDegreeId(degree_id) {
   return dispatch => {
     // We dispatch requestLogin to kickoff the call to the API
     dispatch(requestDeleteMarkByDegreeId())
-    return axios.delete(`http://localhost:8080/mark/deleteMark?degree_id=${degree_id}`, config)
+    return axios.delete(`${url}/mark/deleteMark?degree_id=${degree_id}`, config)
       .then(response => {
         if(!response.data.success) {
           dispatch(deleteMarkError(response.data.msg));
@@ -770,7 +773,7 @@ export function deleteMarkBySchoolId(school_id) {
   return dispatch => {
     // We dispatch requestLogin to kickoff the call to the API
     dispatch(requestDeleteMarkBySchoolId())
-    return axios.delete(`http://localhost:8080/mark/deleteMark?school_id=${school_id}`, config)
+    return axios.delete(`${url}/mark/deleteMark?school_id=${school_id}`, config)
       .then(response => {
         if(!response.data.success) {
           dispatch(deleteMarkError(response.data.msg));

@@ -6,14 +6,11 @@ import {getSchools} from '../actions/Academic.jsx';
 import {getDegrees} from '../actions/Academic.jsx';
 import {getMarks} from '../actions/Academic.jsx';
 
-import Status_Bar from './Status_Bar.jsx';
 import Academic_Pannel from './Academic_Pannel.jsx';
 import Studie_Page from './Studie_Page.jsx';
 import Update_Bio_Page from './Update_Bio_Page.jsx';
 import Update_Password_Form from './Update_Password_Form.jsx';
 import Spinner from 'react-spinkit';
-
-
 
 class Main_Page extends Component {
 
@@ -25,9 +22,7 @@ class Main_Page extends Component {
 
   render() {
     return (
-      <div className="main-page col-md-6">
-        <Spinner name="ball-clip-rotate-multiple" />
-        {/* <Status_Bar stuff={this.props}/> */}
+      <div className="main-page col-md-8">
         <Academic_Pannel
           type='Schools'
           class='school'

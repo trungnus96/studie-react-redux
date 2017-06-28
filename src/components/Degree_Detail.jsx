@@ -59,7 +59,7 @@ class Degree_Detail extends Component {
         <td>Sem {mark.semester}, Year {mark.year_level}</td>
         <td>
           <span
-            className="glyphicon glyphicon-edit school-button"
+            className="glyphicon glyphicon-edit detail-button"
             data-tip
             data-for="editMark"
             onClick={() => {this.updateMark(mark)}}/>
@@ -67,7 +67,7 @@ class Degree_Detail extends Component {
             <span>Edit this Mark</span>
           </ReactTooltip>
           <span
-            className="glyphicon glyphicon-trash school-button"
+            className="glyphicon glyphicon-trash detail-button"
             data-tip
             data-for="removeMark"
             onClick={() => this.commit_delete_mark(mark)}/>

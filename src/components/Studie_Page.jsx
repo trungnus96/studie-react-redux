@@ -39,7 +39,8 @@ class Studie_Page extends Component {
         <div className="text-right">
           <button
             className="btn btn-primary studie-btn"
-            onClick={() => {this.props.toggleNoUpdate(); this.props.toggleSchoolForm(); }}>
+            onClick={() => {this.props.toggleNoUpdate(); this.props.toggleSchoolForm();}}
+            disabled={!this.props.isEnabled}>
             Add School
           </button>
         </div>
@@ -84,7 +85,12 @@ function mapDispatchToProps(dispatch) {
 }
 
 function mapStateToProps({ schools, degrees, marks, toggle }) {
-  return { schools, degrees, marks, toggle };
+  return {
+    schools,
+    degrees,
+    marks,
+    toggle,
+    isEnabled: !schools.isFetching && !degrees.isFetching && !marks.isFetching  };
 }
 
 

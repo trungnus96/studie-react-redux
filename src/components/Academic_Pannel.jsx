@@ -12,7 +12,6 @@ export default class Academic_Pannel extends Component {
           {this.props.isFetching && <Loader color="white" size="10px" margin="4px"/> }
           {!this.props.isFetching && this.props.academic_data &&  this.props.academic_data.length}
         </div>
-
       </div>
     );
   }

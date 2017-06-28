@@ -1,39 +1,22 @@
 import React, { Component } from 'react';
-import {connect} from 'react-redux';
-import {bindActionCreators} from 'redux';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 
-import {getUser} from '../actions/User.jsx';
 import User_Profile from './User_Profile.jsx';
 import Main_Page from './Main_Page.jsx';
 
-class Home extends Component {
-
-  componentWillMount(){
-     this.props.getUser();
-  }
+export default class Home extends Component {
 
   render(){
-    const user_prop = {
-      isFetching: this.props.user.isFetching,
-      message: this.props.user.message
-    }
-
     return (
-      <div>Hello form Home
-        <User_Profile user={this.props.user.user}/>
-        <Main_Page />
+      <div className="container-fluid">
+        <div className="row">
+          <div className="col-md-10 col-center-block">
+            <User_Profile />
+            <Main_Page />
+          </div>
+        </div>
       </div>
     );
   }
 }
-function mapDispatchToProps(dispatch) {
-  return bindActionCreators({
-    getUser
-  }, dispatch);
-}
-
-function mapStateToProps({user}) {
-  return { user: user };
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(Home);
