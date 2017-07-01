@@ -31,7 +31,7 @@ npm start
 ### Built With
 
 * React-Redux
-* Javasript ES6
+* ES6
 * Webpack
 * Babel
 * SASS
