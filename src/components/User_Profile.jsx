@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import Loader from 'halogen/RiseLoader';
-
 import { getUser } from '../actions/User.jsx';
 import { toggleUpdateBio, toggleUpdatePassword } from '../actions/Toggle.jsx';
+import img from '../assets/img/user.png';
 
 class User_Profile extends Component {
   componentWillMount(){
@@ -16,7 +15,7 @@ class User_Profile extends Component {
         <div className="col-md-4">
           <div className="profile-avatar">
             <img src="https://images.pexels.com/photos/261577/pexels-photo-261577.jpeg?w=940&h=650&auto=compress&cs=tinysrgb" />
-            <img className="avatar" src="../../assets/img/user.png" />
+            <img className="avatar" src={img} />
             <div className="info text-center">
               {!this.props.isFetching && <div>
                 <h3>{this.props.user.name}</h3>
@@ -25,7 +24,7 @@ class User_Profile extends Component {
               </div>}
               {this.props.isFetching &&
                 <div className="loader">
-                  <Loader color="white" size="10px"/>
+                  <i className="fa fa-spinner fa-spin fa-3x fa-fw"/>
                 </div>}
             </div>
           </div>

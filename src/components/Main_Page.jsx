@@ -10,7 +10,6 @@ import Academic_Pannel from './Academic_Pannel.jsx';
 import Studie_Page from './Studie_Page.jsx';
 import Update_Bio_Page from './Update_Bio_Page.jsx';
 import Update_Password_Form from './Update_Password_Form.jsx';
-import Spinner from 'react-spinkit';
 
 class Main_Page extends Component {
 
