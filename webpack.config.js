@@ -113,6 +113,5 @@ module.exports = {
     port: 9000,
     stats: "minimal",
     open: true
-
   }
 }
