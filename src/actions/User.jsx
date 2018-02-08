@@ -43,7 +43,7 @@ function requestDataError(message) {
 export function getUser() {
   const token = localStorage.getItem('token');
   const decoded = jwtDecode(token);
-  const username = decoded._doc.username;
+  const username = decoded.username;
   let config = {
     method: 'GET',
     headers: { 'Content-Type':'application/json', 'Authorization': token },
@@ -93,7 +93,7 @@ function updateUserError(message) {
 export function updateProfile(data) {
   const token = localStorage.getItem('token');
   const decoded = jwtDecode(token);
-  const id = decoded._doc._id;
+  const id = decoded._id;
   let config = {
     method: 'PUT',
     headers: { 'Content-Type':'application/json', 'Authorization': token }
@@ -144,9 +144,9 @@ function updatePasswordError(message) {
 export function updatePassword(new_data) {
   const token = localStorage.getItem('token');
   const decoded = jwtDecode(token);
-  const id = decoded._doc._id;
+  const id = decoded._id;
   const data = Object.assign({}, new_data, {
-    username: decoded._doc.username
+    username: decoded.username
   })
   let config = {
     method: 'PUT',

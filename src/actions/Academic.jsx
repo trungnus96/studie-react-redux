@@ -85,7 +85,7 @@ function requestSchoolDataError(message) {
 export function getSchools() {
   const token = localStorage.getItem('token');
   const decoded = jwtDecode(token);
-  const username = decoded._doc.username;
+  const username = decoded.username;
   let config = {
     method: 'GET',
     headers: { 'Content-Type':'application/json', 'Authorization': token },
@@ -135,7 +135,7 @@ function requestDegreeDataError(message) {
 export function getDegrees() {
   const token = localStorage.getItem('token');
   const decoded = jwtDecode(token);
-  const username = decoded._doc.username;
+  const username = decoded.username;
   let config = {
     method: 'GET',
     headers: { 'Content-Type':'application/json', 'Authorization': token },
@@ -185,7 +185,7 @@ function requestMarkDataError(message) {
 export function getMarks() {
   const token = localStorage.getItem('token');
   const decoded = jwtDecode(token);
-  const username = decoded._doc.username;
+  const username = decoded.username;
   let config = {
     method: 'GET',
     headers: { 'Content-Type':'application/json', 'Authorization': token },
@@ -236,7 +236,7 @@ export function addSchool(school) {
   const token = localStorage.getItem('token');
   const decoded = jwtDecode(token);
   const data = Object.assign({}, school, {
-    username: decoded._doc.username
+    username: decoded.username
   })
   let config = {
     method: 'POST',
@@ -399,7 +399,7 @@ export function addDegree(degree) {
   const token = localStorage.getItem('token');
   const decoded = jwtDecode(token);
   const data = Object.assign({}, degree, {
-    username: decoded._doc.username
+    username: decoded.username
   })
   let config = {
     method: 'POST',
@@ -590,7 +590,7 @@ export function addMark(mark) {
   const token = localStorage.getItem('token');
   const decoded = jwtDecode(token);
   const data = Object.assign({}, mark, {
-    username: decoded._doc.username
+    username: decoded.username
   })
   let config = {
     method: 'POST',
