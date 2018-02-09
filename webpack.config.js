@@ -4,6 +4,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const autoprefixer = require('autoprefixer');
 const bootstrapEntryPoints = require('./webpack.bootstrap.config.js');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 
 const isProd = process.env.NODE_ENV === 'production'; //true or false
 const cssDev = [ 'style-loader', 'css-loader', 'sass-loader'];
@@ -104,6 +105,17 @@ module.exports = {
     }),
     new webpack.LoaderOptionsPlugin({
       postcss: [autoprefixer],
+    }),
+    new webpack.optimize.UglifyJsPlugin({
+     // Eliminate comments
+        comments: false,
+    // Compression specific options
+       compress: {
+         // remove warnings
+            warnings: false,
+         // Drop console statements
+            drop_console: true
+       },
     })
   ],
   devServer: {
